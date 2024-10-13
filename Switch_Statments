@@ -1,0 +1,42 @@
+In the below code I have practised different methods of switch case in java with an example
+public class SWITCHCASE {
+    public static void main(String[] args) {
+        String day = "Monday";
+        String res="";
+
+        //SWITCH Statment using arrow which is used in java 12
+        /*switch(day)
+        {
+            case "Sunday","Saturday"->System.out.println("Weekend");
+
+            case "Monday"->System.out.println("First day of the week");
+
+            default->System.out.println("WORKDAYS");
+        }*/
+
+
+        //SWITCH Statment as an expression
+        res = switch(day)
+        {
+            case "Sunday","Saturday"-> "Weekend";
+
+            case "Monday"->"First day of the week";
+
+            default->"WORKDAYS";
+        };//we need to end with a semicolon because switch is being used as an expression here
+
+        System.out.println(res);*/
+
+        //SWITCH Statment with colon(:) and "yield" keyword in java 12
+        res = switch(day)
+        {
+            case "Sunday","Saturday":yield  "Weekend";
+
+            case "Monday": yield "First day of the week";
+
+            default : yield "WORKDAYS";
+        };
+        System.out.println(res);
+
+    }
+}

@@ -1,0 +1,26 @@
+public class Staticusage{
+
+    static int  age=10;//static variable 
+    int num=120;//non static variable 
+    public static void dob(int age)//non static class 
+    {
+        System.out.println("the date of birth is march of "+age);
+        //static variable can be used in non static class also
+        System.out.println();//can not use num variable here becuse it is a non static
+    }
+    public void calc()//non static method can access static and non static variables in it
+    {
+        System.out.println(num);
+        System.out.println(age);//static variable used in non static method
+    }
+    public static void main(String[] args) {
+        Staticusage s = new Staticusage();
+        System.out.println(age);
+        //s.dob(20);//non static method so we make use of object.method
+        dob(210);//or Staticusage.dob(150); or s.dob(150); both are correct
+        //can access the static method through class.method or obejct.method 
+        //or just as method becuse the method is static and called in static class itself
+        s.calc();//to access a non static method in a static class we make use of object reference
+        
+    }
+}
